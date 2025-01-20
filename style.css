@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
+    background-color: #f1f1f1;
+    padding: 10px;
+    height: 5vh;
+    text-align: center;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: #e2e2e2;
+    padding: 10px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+h1 {
+    margin: auto;
+}
+
+main {
+    grid-area: main;
+    min-height: 85vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    /* Zentriert horizontal */
+    align-items: center;
+    /* Zentriert vertikal */
+}
+
+#gameTitle {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+#game {
+    width: 95%;
+    height: 95%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    /* Zentriert Inhalte im Game-Div horizontal */
+    align-items: center;
+    /* Zentriert Inhalte im Game-Div vertikal */
+    border: 2px solid #000;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #f1f1f1;
+    padding: 10px;
+    height: 3vh;
+    text-align: center;
+}

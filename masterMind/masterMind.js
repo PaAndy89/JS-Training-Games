@@ -1,11 +1,11 @@
-import { createButon } from "../createButton.js";
+import { createButon } from "../misc/createButton.js";
 
-createButon('Mastermind', masterMind);
+createButon('Mastermind', main);
 
 // SVG-Namensraum verwenden, um das SVG und die Kreis-Elemente zu erstellen
 const svgNamespace = "http://www.w3.org/2000/svg";
 
-export function masterMind() {
+export function main() {
     let gameField = document.querySelector('#game');
     gameField.innerHTML = '';
 

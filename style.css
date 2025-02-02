@@ -34,6 +34,15 @@ aside {
     padding: 0;
 }
 
+.gameSelector {
+    margin-top: 4px;
+    width: 150px;
+    padding: 4px;
+    background: rgb(16,16,255);
+    background: radial-gradient(circle ,rgb(149, 225, 255) 0%, rgb(15, 150, 228) 69%, rgb(16, 16, 255) 100%);
+    font-weight: bolder;
+}
+
 h1 {
     margin: auto;
 }
@@ -59,6 +68,7 @@ main {
     height: 95%;
     background-color: #e0e0e0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     /* Zentriert Inhalte im Game-Div horizontal */
     align-items: center;

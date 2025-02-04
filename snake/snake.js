@@ -2,9 +2,6 @@ import { createButon } from "../misc/createButton.js";
 
 createButon('Snake', main);
 
-// SVG-Namensraum verwenden, um das SVG und die Kreis-Elemente zu erstellen
-const svgNamespace = "http://www.w3.org/2000/svg";
-
 export function main() {
     let game = new Game();
     game.startGame();
@@ -232,9 +229,3 @@ class Game {
     }
 
 }
-
-
-
-
-
-setTimeout(() => { main(); }, 100);

@@ -1,11 +1,12 @@
 import { createButon } from "../misc/createButton.js";
+import { CircleRow } from "./circleRow.js";
 
 createButon('Mastermind', main);
 
 // SVG-Namensraum verwenden, um das SVG und die Kreis-Elemente zu erstellen
 const svgNamespace = "http://www.w3.org/2000/svg";
 
-const colors = ['red', 'green', 'lightblue', 'blue', 'yellow', 'purple', 'orange'];
+const colors = ['red', 'lightblue', 'blue', 'lightgreen', 'green', 'yellow', 'purple', 'orange', 'pink'];
 
 export function main() {
     let gameField = document.querySelector('#game');
@@ -19,26 +20,29 @@ class Mastermind {
     constructor() {
         this.gameField = document.querySelector('#game');
         this.gameField.innerHTML = '';
-        this.codeLength = 6;
-        this.code = this.generateCode();
-        this.activeGuess = 0;
-        this.activeGuessRow = 0;
+        this.row = new CircleRow({ parent: this.gameField, codeLength: 4, colors: colors });
+        this.gameField.append(this.row.circleRowDiv);
 
-        this.highScoreField = document.createElement('div');
-        this.highScoreField.innerHTML = 'HighScore: 0';
-        this.canvas = document.createElement('canvas');
-        this.ctx = this.canvas.getContext('2d');
-        this.size = { canvasX: 800, canvasY: 600, move: 20, apple: 20, snake: 16 };
-        this.gameSpeed = 100;
-        this.interval = null;
-        this.applePos = {};
-        this.snakePos = { x: 2, y: 4 };
-        this.snakeTail = [];
-        this.SnakeLength = 4;
-        this.direction = '';
-        this.highScoreValue = 0;
-        this.directionChange = false;
-        this.init();
+        // this.codeLength = 6;
+        // this.code = this.generateCode();
+        // this.activeGuess = 0;
+        // this.activeGuessRow = 0;
+
+        // this.highScoreField = document.createElement('div');
+        // this.highScoreField.innerHTML = 'HighScore: 0';
+        // this.canvas = document.createElement('canvas');
+        // this.ctx = this.canvas.getContext('2d');
+        // this.size = { canvasX: 800, canvasY: 600, move: 20, apple: 20, snake: 16 };
+        // this.gameSpeed = 100;
+        // this.interval = null;
+        // this.applePos = {};
+        // this.snakePos = { x: 2, y: 4 };
+        // this.snakeTail = [];
+        // this.SnakeLength = 4;
+        // this.direction = '';
+        // this.highScoreValue = 0;
+        // this.directionChange = false;
+        // this.init();
     }
 
     init() {
